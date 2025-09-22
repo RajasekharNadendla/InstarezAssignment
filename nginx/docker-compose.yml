@@ -17,7 +17,7 @@ services:
   container_name: dummy_backend
   working_dir: /app
   volumes:
-    - ./backend:/app
+    - ./backend:/app 
   command: ["python", "-m", "http.server", "5000"]
   healthcheck:
     test: ["CMD-SHELL", "curl -f http://localhost:5000/ || exit 1"]
