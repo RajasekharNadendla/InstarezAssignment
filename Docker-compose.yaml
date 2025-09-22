@@ -11,7 +11,7 @@ services:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=password123
     ports:
-      - "3000:5000"   # host:container => app accessible at localhost:3000
+      - "3000:5000"   # host:container => app accessible at localhost:3000 this is comment
     depends_on:
       db:
         condition: service_healthy
