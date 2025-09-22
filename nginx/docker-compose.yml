@@ -10,21 +10,20 @@ services:
       test: ["CMD-SHELL", "curl -f http://localhost:3000/ || exit 1"]
       interval: 5s
       retries: 10
-      start_period: 10s
+      start_period: 15s
 
   backend:
-  image: python:3.11-slim
-  container_name: dummy_backend
-  working_dir: /app
-  volumes:
-    - ./backend:/app 
-  command: ["python", "-m", "http.server", "5000"]
-  healthcheck:
-    test: ["CMD-SHELL", "curl -f http://localhost:5000/ || exit 1"]
-    interval: 5s
-    retries: 10
-    start_period: 15s
-
+    image: python:3.11-slim
+    container_name: dummy_backend
+    working_dir: /app
+    volumes:
+      - ./backend:/app
+    command: ["python", "-m", "http.server", "5000"]
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5000/ || exit 1"]
+      interval: 5s
+      retries: 10
+      start_period: 15s
 
   nginx:
     image: nginx:1.25-alpine
