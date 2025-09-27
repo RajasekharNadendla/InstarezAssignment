@@ -1,0 +1,12 @@
+# 1) Build and start
+docker compose up --build -d
+
+# 2) Check logs
+docker compose logs -f backend
+
+# 3) Check endpoints
+curl http://localhost:3000/health
+# expected: {"status":"healthy"}
+
+curl http://localhost:3000/db-test
+# expected: {"db":"ok"}  (once postgres is ready)

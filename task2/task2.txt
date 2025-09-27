@@ -1,0 +1,5 @@
+docker compose up --build -d
+
+# Test routes through nginx (on host port 8080)
+curl http://localhost:8080/           # should return index.html from frontend
+curl http://localhost:8080/api/hello  # should return {"msg":"hello from backend"}
